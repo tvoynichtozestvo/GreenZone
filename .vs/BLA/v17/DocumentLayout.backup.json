@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\karas\\3d objects\\\u043B\u0438\u0437\u0430\\bla\\fertilizerpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\fertilizerpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\karas\\3d objects\\\u043B\u0438\u0437\u0430\\bla\\fertilizerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\fertilizerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FertilizerPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml.cs",
+              "RelativeDocumentMoniker": "BLA\\FertilizerPage.xaml.cs",
+              "ToolTip": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml.cs",
+              "RelativeToolTip": "BLA\\FertilizerPage.xaml.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:25:43.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FertilizerPage.xaml",
+              "DocumentMoniker": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml",
+              "RelativeDocumentMoniker": "BLA\\FertilizerPage.xaml",
+              "ToolTip": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml",
+              "RelativeToolTip": "BLA\\FertilizerPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-02T16:25:27.364Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

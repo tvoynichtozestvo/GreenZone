@@ -1,0 +1,18 @@
+﻿<Window x:Class="BLA.AddFertilizerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BLA"
+        mc:Ignorable="d"
+        Title="Добавление удобрений" Height="459" Width="355" Icon="assets/logo.ico">
+    <Grid>
+        <Label Content="Добавление" Foreground="#4CAF50" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Название удобрения" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="startBox" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
+        <Label Content="Описание удобрения" HorizontalAlignment="Center" Margin="0,132,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="endBox" Margin="26,162,27,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="168"/>
+        <Button Content="Добавить" Margin="28,371,27,0" VerticalAlignment="Top" Height="32" Width="300" Background="#4CAF50" Foreground="White" Click="Button_Click"/>
+
+    </Grid>
+</Window>

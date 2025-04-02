@@ -1,0 +1,115 @@
+﻿<Page x:Class="BLA.FertilizerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BLA"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FertilizerPage">
+
+    <Grid Background="#F1F8E9">
+        <!-- Заголовок страницы -->
+        <TextBlock Text="Управление удобрениями" 
+                   FontSize="26" 
+                   FontWeight="Bold" 
+                   Foreground="#388E3C" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   Margin="20,20,0,0"/>
+
+        <!-- Таблица с данными -->
+        <DataGrid Name="FertilizerData" 
+                  Margin="20,100,20,20"
+                  AutoGenerateColumns="True" 
+                  HeadersVisibility="Column"
+                  RowBackground="#FFFFFF"
+                  AlternatingRowBackground="#F0F4C7"
+                  GridLinesVisibility="None"
+                  BorderBrush="#388E3C"
+                  BorderThickness="0.5"
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#388E3C"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Padding" Value="10"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+        </DataGrid>
+
+        <!-- Кнопки управления -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,60,0,0" >
+            <!-- Кнопка добавления удобрения -->
+            <Button x:Name="addFertilizerBtn" 
+                    Content="Добавить удобрение" 
+                    Background="#FF4CAF50" 
+                    Foreground="White" 
+                    Width="180" 
+                    Height="40" 
+                    FontSize="14" 
+                    FontWeight="Bold" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Click="addFertilizerBtn_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF4CAF50"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,0"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2E7D32"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1B5E20"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!-- Кнопка обновления таблицы -->
+            <Button x:Name="updateBtn" 
+                    Content="Обновить таблицу" 
+                    Background="#FF4CAF50" 
+                    Foreground="White" 
+                    Width="180" 
+                    Height="40" 
+                    FontSize="14" 
+                    FontWeight="Bold" 
+                    Padding="10,0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Click="updateBtn_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF4CAF50"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,0"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2E7D32"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1B5E20"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</Page>

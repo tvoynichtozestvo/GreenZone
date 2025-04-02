@@ -1,0 +1,30 @@
+﻿<Window x:Class="BLA.addWaterFlower"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BLA"
+        mc:Ignorable="d"
+        Title="Добавление клумбы" Height="549" Width="355" Icon="assets/logo.ico">
+    <Grid Background="#E8F5E9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="407*"/>
+            <RowDefinition Height="56*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Добавление" Foreground="#4CAF50" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Номер клумбы" HorizontalAlignment="Left" Margin="113,52,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="flowerbedBox"  Margin="15,81,18,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
+        <Label Content="Номер трубы" HorizontalAlignment="Left" Margin="118,113,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Начало полива" HorizontalAlignment="Left" Margin="112,178,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="startBox" HorizontalAlignment="Center" Margin="0,207,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
+        <Label Content="Конец полива" HorizontalAlignment="Left" Margin="116,240,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="endBox" Margin="16,269,17,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
+        <Label Content="День недели" HorizontalAlignment="Left" Margin="120,302,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox Name="weekBox" Margin="0,331,0,0" VerticalAlignment="Top" Width="301" Height="27"/>
+        <Label Content="Удобрение" HorizontalAlignment="Center" Margin="0,363,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox Name="fertilizerBox" Margin="0,391,0,0" VerticalAlignment="Top" Width="301" Height="27" Grid.RowSpan="2"/>
+        <Button Content="Добавить" Margin="17,442,18,0" Click="Button_Click" VerticalAlignment="Top" Height="32" Width="300" Grid.RowSpan="2" Background="#4CAF50" Foreground="White"/>
+        <ComboBox x:Name="tubeIdComboBox" Margin="0,145,0,0" VerticalAlignment="Top" Width="301" Height="27"/>
+
+    </Grid>
+</Window>

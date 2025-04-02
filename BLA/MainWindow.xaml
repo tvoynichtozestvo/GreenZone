@@ -1,0 +1,93 @@
+﻿<Window x:Class="BLA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BLA"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="Шлавное окно" Height="640" Width="900" Icon="assets/logo.ico">
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryColor">#FF4CAF50</SolidColorBrush>
+        <SolidColorBrush x:Key="SecondaryColor">#E8F5E9</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonHoverColor">#FF45A049</SolidColorBrush>
+        <SolidColorBrush x:Key="TextColor">#333333</SolidColorBrush>
+        
+        <Style x:Key="WindowControlButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#388E3C"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#388E3C"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+
+        <!-- Общий стиль для кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource ButtonHoverColor}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+
+    <Grid Background="#E8F5E9">
+
+        <DockPanel VerticalAlignment="Top" Height="24" Background="{StaticResource PrimaryColor}" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <!-- Кнопки управления окном -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                <Button x:Name="MinimizeButton" Content="–" Width="40" Height="24" Style="{StaticResource WindowControlButton}" Click="MinimizeButton_Click"/>
+                <Button x:Name="MaximizeButton" Content="☐" Width="40" Height="24" Style="{StaticResource WindowControlButton}" Click="MaximizeButton_Click"/>
+                <Button x:Name="CloseButton" Content="✕" Width="40" Height="24" Style="{StaticResource WindowControlButton}" Click="CloseButton_Click"/>
+            </StackPanel>
+        </DockPanel>
+        
+        <!-- Верхнее меню -->
+        <Menu Background="#B5DEB8" Height="50" VerticalAlignment="Top" Margin="0 24 0 0">
+            <MenuItem IsEnabled="False">
+                <MenuItem.Header>
+                    <AccessText Text="🌱 Зелёная зона" Margin="0,8,0,0" FontSize="20" Foreground="Black" />
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        <Button x:Name="BackBtn" Content="Назад" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 34 20 0" Click="BackBtn_Click"/>
+
+        <!-- Нижнее меню -->
+        <Menu Background="#B5DEB8" Height="50" VerticalAlignment="Bottom">
+        </Menu>
+        <Button Content="Написать в поддержку" Margin="10,0,0,10"  Height="28" Width="138" Background="Transparent" Foreground="Black" Click="Button_Click_1" FontSize="13" VerticalAlignment="Bottom" HorizontalAlignment="Left" BorderThickness="0"/>
+
+        <!-- Основной фрейм -->
+        <Frame Name="MainFrame" Margin="15,95,15,60" Background="#E8F5E9" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" />
+    </Grid>
+</Window>
