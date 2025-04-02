@@ -1,18 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\",
+  "WorkspaceRootPath": "C:\\Users\\maxkr\\Desktop\\GreenZone\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\karas\\3d objects\\\u043B\u0438\u0437\u0430\\bla\\waterflower.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\waterflower.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\userspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\userspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\karas\\3d objects\\\u043B\u0438\u0437\u0430\\bla\\fertilizerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\fertilizerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\loginpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\loginpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\karas\\3d objects\\\u043B\u0438\u0437\u0430\\bla\\fertilizerpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\fertilizerpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\userspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\userspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\userdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\userdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|c:\\users\\maxkr\\desktop\\greenzone\\bla\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9648887F-7DE6-4EB6-9BC3-BE4CA1D147D6}|BLA\\BLA.csproj|solutionrelative:bla\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,38 +43,88 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WaterFlower.xaml",
-              "DocumentMoniker": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\WaterFlower.xaml",
-              "RelativeDocumentMoniker": "BLA\\WaterFlower.xaml",
-              "ToolTip": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\WaterFlower.xaml",
-              "RelativeToolTip": "BLA\\WaterFlower.xaml",
+              "Title": "UsersPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\UsersPage.xaml",
+              "RelativeDocumentMoniker": "BLA\\UsersPage.xaml",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\UsersPage.xaml",
+              "RelativeToolTip": "BLA\\UsersPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-02T16:37:52.13Z",
+              "WhenOpened": "2025-04-02T17:34:40.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\UserDialog.xaml",
+              "RelativeDocumentMoniker": "BLA\\UserDialog.xaml",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\UserDialog.xaml",
+              "RelativeToolTip": "BLA\\UserDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-02T17:30:47.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\UsersPage.xaml.cs",
+              "RelativeDocumentMoniker": "BLA\\UsersPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\UsersPage.xaml.cs",
+              "RelativeToolTip": "BLA\\UsersPage.xaml.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAqwLUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:28:07.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BLA\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BLA\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:26:52.197Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FertilizerPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml.cs",
-              "RelativeDocumentMoniker": "BLA\\FertilizerPage.xaml.cs",
-              "ToolTip": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml.cs",
-              "RelativeToolTip": "BLA\\FertilizerPage.xaml.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAswFUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T16:25:43.581Z",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BLA\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\MainWindow.xaml",
+              "RelativeToolTip": "BLA\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-02T17:26:50.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FertilizerPage.xaml",
-              "DocumentMoniker": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml",
-              "RelativeDocumentMoniker": "BLA\\FertilizerPage.xaml",
-              "ToolTip": "C:\\Users\\karas\\3D Objects\\\u043B\u0438\u0437\u0430\\BLA\\FertilizerPage.xaml",
-              "RelativeToolTip": "BLA\\FertilizerPage.xaml",
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "BLA\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\LoginPage.xaml.cs",
+              "RelativeToolTip": "BLA\\LoginPage.xaml.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwC8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:25:01.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "BLA\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\maxkr\\Desktop\\GreenZone\\BLA\\LoginPage.xaml",
+              "RelativeToolTip": "BLA\\LoginPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-02T16:25:27.364Z",
+              "WhenOpened": "2025-04-02T17:24:59.989Z",
               "EditorCaption": ""
             }
           ]

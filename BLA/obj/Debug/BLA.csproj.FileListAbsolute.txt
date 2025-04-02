@@ -321,3 +321,45 @@ C:\Users\karas\3D Objects\лиза\BLA\obj\Debug\BLA.csproj.CoreCompileInputs.ca
 C:\Users\karas\3D Objects\лиза\BLA\obj\Debug\BLA.csproj.Up2Date
 C:\Users\karas\3D Objects\лиза\BLA\obj\Debug\BLA.exe
 C:\Users\karas\3D Objects\лиза\BLA\obj\Debug\BLA.pdb
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.csproj.AssemblyReference.cache
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\FlowerInfo.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\AddFertilizerWindow.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\AddPolivWindow.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\addWaterFlower.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\FertilizerPage.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\FlowerInfo.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\LoginPage.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\MainWindow.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\send.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\UserDialog.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\UsersPage.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\WaterFlower.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\App.g.cs
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA_MarkupCompile.cache
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA_MarkupCompile.lref
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.exe
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.pdb
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\BLA.exe.config
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\BLA.exe
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\BLA.pdb
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\itextsharp.dll
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\maxkr\Desktop\GreenZone\BLA\bin\Debug\itextsharp.xml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\App.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\AddFertilizerWindow.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\AddPolivWindow.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\addWaterFlower.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\FertilizerPage.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\LoginPage.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\MainWindow.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\send.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\WaterFlower.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\UserDialog.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\UsersPage.baml
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.g.resources
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.Properties.Resources.resources
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.csproj.GenerateResource.cache
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.csproj.CoreCompileInputs.cache
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\BLA.csproj.Up2Date
+C:\Users\maxkr\Desktop\GreenZone\BLA\obj\Debug\GeneratedInternalTypeHelper.g.cs

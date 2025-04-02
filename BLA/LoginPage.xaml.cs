@@ -31,30 +31,34 @@ namespace BLA
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            if (loginBox.Text == "" && PasswordBox.Text == "")
+            string loginUser = loginBox.Text;
+            string password = PasswordBox.Text;
+
+            DB dB = new DB();
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand(@"SELECT Role,Login, Password From Users Where login = @uL AND password = @uP", dB.GetConnection());
+            command.Parameters.Add("@uL", SqlDbType.VarChar).Value = loginUser;
+            command.Parameters.Add("@uP", SqlDbType.VarChar).Value = password;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Не все поля заполнены");
-            }
-            else
-            {
-                string login = loginBox.Text;
-                string password = PasswordBox.Text;
-                DB db = new DB();
-                DataTable dataTable = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                SqlCommand sqlCommand = new SqlCommand(@"SELECT Login, Password FROM Users WHERE Login = @lg AND Password = @ps", db.GetConnection());
-                sqlCommand.Parameters.Add("@lg", SqlDbType.VarChar).Value = login;
-                sqlCommand.Parameters.Add("@ps", SqlDbType.VarChar).Value = password;
-                adapter.SelectCommand = sqlCommand;
-                adapter.Fill(dataTable);
-                if (dataTable.Rows.Count > 0)
+                string group = table.Rows[0]["role"].ToString();
+                if (group == "Администратор")
                 {
-                    WaterFlower waterFlower = new WaterFlower();
-                    NavigationService?.Navigate(waterFlower);
+                    UsersPage mainWindowAdmin = new UsersPage();
+                    NavigationService?.Navigate(mainWindowAdmin);
+                }
+                else if (group == "Работник")
+                {
+                    WaterFlower mainWindowAdmin = new WaterFlower();
+                    NavigationService?.Navigate(mainWindowAdmin);
+
                 }
                 else
                 {
-                    MessageBox.Show("Неверные данные");
+                    MessageBox.Show("У вас нет доступа");
                 }
 
             }

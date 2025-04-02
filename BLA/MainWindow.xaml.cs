@@ -26,7 +26,8 @@ namespace BLA
         {
             InitializeComponent();
             LoginPage loginPage = new LoginPage();
-            MainFrame.Content = loginPage; 
+            MainFrame.Content = loginPage;
+
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

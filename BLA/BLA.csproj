@@ -83,6 +83,12 @@
     <Compile Include="send.xaml.cs">
       <DependentUpon>send.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserDialog.xaml.cs">
+      <DependentUpon>UserDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPage.xaml.cs">
+      <DependentUpon>UsersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WaterFlower.xaml.cs">
       <DependentUpon>WaterFlower.xaml</DependentUpon>
     </Compile>
@@ -124,6 +130,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="send.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
