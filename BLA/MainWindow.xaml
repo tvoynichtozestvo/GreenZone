@@ -8,7 +8,7 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        Title="Шлавное окно" Height="640" Width="900" Icon="assets/logo.ico">
+        Title="Главное окно" Height="640" Width="900" Icon="assets/logo.ico">
     <Window.Resources>
         <SolidColorBrush x:Key="PrimaryColor">#FF4CAF50</SolidColorBrush>
         <SolidColorBrush x:Key="SecondaryColor">#E8F5E9</SolidColorBrush>

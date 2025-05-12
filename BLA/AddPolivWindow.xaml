@@ -5,22 +5,109 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BLA"
         mc:Ignorable="d"
-        Title="Добавление полива" Height="459" Width="355" Icon="assets/logo.ico">
-    <Grid Background="#E8F5E9">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="407*"/>
-            <RowDefinition Height="56*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Добавление" Foreground="#4CAF50" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Начало полива" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox Name="startBox" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
-        <Label Content="Конец полива" HorizontalAlignment="Left" Margin="116,133,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox Name="endBox" Margin="26,162,27,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
-        <Label Content="День недели" HorizontalAlignment="Left" Margin="120,195,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox Name="weekBox" Margin="28,224,27,0" VerticalAlignment="Top" Width="301" Height="27"/>
-        <Label Content="Удобрение" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox Name="fertilizerBox" Margin="28,284,27,0" VerticalAlignment="Top" Width="301" Height="27"/>
-        <Button Content="Добавить" Margin="28,335,27,0" Click="Button_Click" VerticalAlignment="Top" Height="32" Width="300" Background="#4CAF50" Foreground="White"/>
+         Background="#E8F5E9"
+        Title="Добавление полива" 
+        Height="410" Width="355"
+        MinWidth="355" MaxWidth="600"
+        MinHeight="410" MaxHeight="700"
+        Icon="assets/logo.ico">
 
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Label Content="Добавление" 
+               Foreground="#4CAF50" 
+               Grid.Row="0"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="20"
+              />
+
+        <!-- Начало полива -->
+        <Label Content="Начало полива" 
+               Grid.Row="1"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"
+              />
+
+        <TextBox Name="startBox" 
+                 Grid.Row="2"
+                 HorizontalAlignment="Stretch" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 Height="27"
+                 Margin="0,5"/>
+
+        <!-- Конец полива -->
+        <Label Content="Конец полива" 
+               Grid.Row="3"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"
+              />
+
+        <TextBox Name="endBox" 
+                 Grid.Row="4"
+                 HorizontalAlignment="Stretch" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 Height="27"
+                 Margin="0,5"/>
+
+        <!-- День недели -->
+        <Label Content="День недели" 
+               Grid.Row="5"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"
+              />
+
+        <ComboBox Name="weekBox" 
+                  Grid.Row="6"
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" 
+                  Height="27"
+                  Margin="0,5"/>
+
+        <!-- Удобрение -->
+        <Label Content="Удобрение" 
+               Grid.Row="7"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"
+              />
+
+        <ComboBox Name="fertilizerBox" 
+                  Grid.Row="8"
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" 
+                  Height="27"
+                  Margin="0,5"/>
+
+        <!-- Кнопка -->
+        <Button Content="Добавить" 
+                Grid.Row="9"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top" 
+                Height="32" 
+                Background="#4CAF50" 
+                Foreground="White" 
+                Click="Button_Click"
+               />
     </Grid>
 </Window>

@@ -29,7 +29,7 @@
                   BorderBrush="#388E3C"
                   BorderThickness="0.5"
                   HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Auto">
+                  VerticalScrollBarVisibility="Auto" FontSize="18">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#388E3C"/>
@@ -85,7 +85,7 @@
                     Height="40" 
                     FontSize="14" 
                     FontWeight="Bold" 
-                    Padding="10,0"
+                    Margin="10,0,0,0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Click="updateBtn_Click">
@@ -107,7 +107,36 @@
                     </Style>
                 </Button.Style>
             </Button>
-            
+            <Button x:Name="deleteFertilizerBtn" 
+        Content="Удалить удобрение" 
+        Background="#FFD32F2F" 
+        Foreground="White" 
+        Width="180" 
+        Height="40" 
+        FontSize="14" 
+        FontWeight="Bold" 
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Click="deleteFertilizerBtn_Click"
+        Margin="10,0,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FFD32F2F"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,0"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B71C1C"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#7F0000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
         
     </Grid>

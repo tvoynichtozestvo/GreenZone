@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Пользователь" 
         Height="400" 
+        Background="#E8F5E9"
         Width="350"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
@@ -17,6 +18,7 @@
         <SolidColorBrush x:Key="SecondaryColor">#E8F5E9</SolidColorBrush>
         <SolidColorBrush x:Key="ButtonHoverColor">#FF45A049</SolidColorBrush>
         <SolidColorBrush x:Key="TextColor">#333333</SolidColorBrush>
+        <SolidColorBrush x:Key="BorderColor">#FFBDBDBD</SolidColorBrush>
 
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
@@ -26,24 +28,30 @@
         </Style>
 
         <Style TargetType="TextBox">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="300"/>
-            <Setter Property="Height" Value="27"/>
-            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="25,0,25,10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
         </Style>
 
         <Style TargetType="PasswordBox">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="300"/>
-            <Setter Property="Height" Value="27"/>
-            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="25,0,25,10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
         </Style>
 
         <Style TargetType="ComboBox">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="300"/>
-            <Setter Property="Height" Value="27"/>
-            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="25,0,25,10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
         </Style>
 
         <Style TargetType="Button">
@@ -53,15 +61,21 @@
             <Setter Property="Height" Value="32"/>
             <Setter Property="Margin" Value="10,0"/>
             <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="{StaticResource ButtonHoverColor}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+                    <Setter Property="Opacity" Value="0.8"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
 
-    <Grid Background="{StaticResource SecondaryColor}">
+    <Grid  Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -71,6 +85,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- Заголовок -->
@@ -79,18 +94,18 @@
                Foreground="{StaticResource PrimaryColor}" 
                FontSize="20"
                FontWeight="Bold"
-               Margin="0,15,0,10"/>
+               Margin="0,10"/>
 
         <!-- Логин -->
-        <Label Grid.Row="1" Content="Логин:"/>
+        <Label Grid.Row="1" Content="Логин"/>
         <TextBox x:Name="LoginTextBox" Grid.Row="2"/>
 
         <!-- Пароль -->
-        <Label Grid.Row="3" Content="Пароль:"/>
+        <Label Grid.Row="3" Content="Пароль"/>
         <PasswordBox x:Name="PasswordBox" Grid.Row="4"/>
 
         <!-- Роль -->
-        <Label Grid.Row="5" Content="Роль:"/>
+        <Label Grid.Row="5" Content="Роль"/>
         <ComboBox x:Name="RoleComboBox" Grid.Row="6">
             <ComboBoxItem Content="Администратор"/>
             <ComboBoxItem Content="Работник" IsSelected="True"/>
@@ -100,9 +115,9 @@
         <StackPanel Grid.Row="7" 
                     Orientation="Horizontal" 
                     HorizontalAlignment="Center"
-                    Margin="0,15,0,15">
-            <Button Content="ОК" Click="OkButton_Click"/>
-            <Button Content="Отмена" Click="CancelButton_Click"/>
+                    Margin="0,20">
+            <Button Content="ОК" Click="OkButton_Click" IsDefault="True"/>
+            <Button Content="Отмена" Click="CancelButton_Click" IsCancel="True"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -4,15 +4,77 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BLA"
-        mc:Ignorable="d"
-        Title="Добавление удобрений" Height="459" Width="355" Icon="assets/logo.ico">
-    <Grid>
-        <Label Content="Добавление" Foreground="#4CAF50" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Название удобрения" HorizontalAlignment="Center" Margin="0,71,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="startBox" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
-        <Label Content="Описание удобрения" HorizontalAlignment="Center" Margin="0,132,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="endBox" Margin="26,162,27,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="168"/>
-        <Button Content="Добавить" Margin="28,371,27,0" VerticalAlignment="Top" Height="32" Width="300" Background="#4CAF50" Foreground="White" Click="Button_Click"/>
+        mc:Ignorable="d" 
+        Background="#E8F5E9"
+        Title="Добавление удобрений" 
+        Height="459" Width="355" 
+        MinWidth="355" MaxWidth="600"
+        MinHeight="459" MaxHeight="700"
+        Icon="assets/logo.ico">
 
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Label Content="Добавление" 
+               Foreground="#4CAF50" 
+               Grid.Row="0"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="20"
+               Margin="0,10"/>
+
+        <!-- Название удобрения -->
+        <Label Content="Название удобрения" 
+               Grid.Row="1"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               FontSize="14"
+              />
+
+        <TextBox x:Name="startBox" 
+                 Grid.Row="2"
+                 HorizontalAlignment="Stretch" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 Height="27"
+                 Margin="0,5"/>
+
+        <!-- Описание удобрения -->
+        <Label Content="Описание удобрения" 
+               Grid.Row="3"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"
+               />
+
+        <TextBox x:Name="endBox" 
+                 Grid.Row="4"
+                 HorizontalAlignment="Stretch" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Stretch" 
+                 Margin="0,5"
+                 AcceptsReturn="True"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+        <!-- Кнопка -->
+        <Button Content="Добавить" 
+                Grid.Row="5"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top" 
+                Height="32" 
+                Background="#4CAF50" 
+                Foreground="White" 
+                Click="Button_Click"
+                Margin="0,20,0,0"/>
     </Grid>
 </Window>

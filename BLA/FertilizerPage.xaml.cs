@@ -1,22 +1,9 @@
-﻿using iTextSharp.text.pdf;
-using iTextSharp.text;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace BLA
 {
@@ -38,7 +25,7 @@ namespace BLA
             DB dB = new DB();
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-            SqlCommand sqlCommand = new SqlCommand(@"SELECT * FROM Fertilizer", dB.GetConnection());
+            SqlCommand sqlCommand = new SqlCommand(@"SELECT NameFertilizer as Название, Description as Описание FROM Fertilizer", dB.GetConnection());
             sqlDataAdapter.SelectCommand = sqlCommand;
             sqlDataAdapter.Fill(dataTable);
 
@@ -57,31 +44,59 @@ namespace BLA
             InitTable();
         }
 
-        private void printPdfBtn_Click(object sender, RoutedEventArgs e)
+
+        private void deleteFertilizerBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (FertilizerData.SelectedItem == null)
             {
-                var saveFileDialog = new Microsoft.Win32.SaveFileDialog();
-                saveFileDialog.Filter = "PDF файлы (*.pdf)|*.pdf";
-                saveFileDialog.Title = "Сохранить отчет PDF";
-                saveFileDialog.FileName = "Отчет_по_удобрениям_" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
-
-                if (saveFileDialog.ShowDialog() == true)
-                {
-                    // Остальной код создания PDF остается таким же
-                    Document document = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
-                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(saveFileDialog.FileName, FileMode.Create));
-
-                    // ... остальной код ...
-
-                    System.Windows.MessageBox.Show("Отчет успешно сохранен в PDF!", "Успех",
-                        System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
-                }
+                MessageBox.Show("Пожалуйста, выберите удобрение для удаления", "Информация",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            catch (Exception ex)
+
+            // Получаем выбранную строку
+            DataRowView selectedRow = (DataRowView)FertilizerData.SelectedItem;
+            string fertilizerName = selectedRow["Название"].ToString();
+
+            // Подтверждение удаления
+            MessageBoxResult result = MessageBox.Show(
+                $"Вы уверены, что хотите удалить удобрение '{fertilizerName}'?",
+                "Подтверждение удаления",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
             {
-                System.Windows.MessageBox.Show($"Ошибка при создании PDF: {ex.Message}", "Ошибка",
-                    System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                try
+                {
+                    DB dB = new DB();
+                    using (SqlConnection connection = dB.GetConnection())
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(
+                            "DELETE FROM Fertilizer WHERE NameFertilizer = @Name",
+                            connection);
+                        command.Parameters.AddWithValue("@Name", fertilizerName);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Удобрение успешно удалено", "Успех",
+                                MessageBoxButton.OK, MessageBoxImage.Information);
+                            InitTable(); // Обновляем таблицу
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не удалось удалить удобрение", "Ошибка",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении удобрения: Это удобрение используется, перед удалением удалите все поливы с этим удобрением", "Ошибка",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 

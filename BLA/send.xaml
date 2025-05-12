@@ -5,18 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BLA"
         mc:Ignorable="d"
-        Title="Помощь" Height="459" Width="355" Icon="assets/logo.ico">
-    <Grid Background="#E8F5E9">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="407*"/>
-            <RowDefinition Height="56*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Сообщение в тех.поддержку" Foreground="#4CAF50" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
-        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox Name="startBox" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="27"/>
-        <Label Content="Описание проблемы" HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox Name="endBox" Margin="26,162,27,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="302" Height="145"/>
-        <Button Content="Отправить" Margin="28,335,27,0" Click="Button_Click" VerticalAlignment="Top" Height="32" Width="300" Background="#4CAF50" Foreground="White"/>
+        Title="Помощь" 
+        Height="459" Width="355"
+        Background="#E8F5E9"
+        MinWidth="355" MaxWidth="600"
+        MinHeight="459" MaxHeight="700"
+        Icon="assets/logo.ico">
 
+    <Grid  Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Label Content="Сообщение в тех.поддержку" 
+               Grid.Row="0"
+               Foreground="#4CAF50" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="22" 
+               FontWeight="Bold"
+               Margin="0,10"/>
+
+        <!-- Номер телефона -->
+        <Label Content="Номер телефона" 
+               Grid.Row="1"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"/>
+
+        <TextBox Name="startBox" 
+               Grid.Row="2"
+               HorizontalAlignment="Stretch" 
+               TextWrapping="Wrap" 
+               VerticalAlignment="Top" 
+               Height="27"
+               Margin="0,5"/>
+
+        <!-- Описание проблемы -->
+        <Label Content="Описание проблемы" 
+               Grid.Row="3"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="14"/>
+
+        <TextBox Name="endBox" 
+               Grid.Row="4"
+               HorizontalAlignment="Stretch" 
+               TextWrapping="Wrap" 
+               VerticalAlignment="Stretch" 
+               Margin="0,5"
+               AcceptsReturn="True"
+               ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+        <!-- Кнопка Отправить -->
+        <Button Content="Отправить" 
+                Grid.Row="5"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top" 
+                Height="32" 
+                Background="#4CAF50" 
+                Foreground="White" 
+                Click="Button_Click"
+                Margin="0,20,0,0"/>
     </Grid>
 </Window>

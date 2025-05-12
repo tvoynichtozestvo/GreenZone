@@ -48,16 +48,15 @@
 
         <!-- Панель управления -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
-            VerticalAlignment="Top" Margin="0,110,0,0">
+            VerticalAlignment="Top" Margin="0,110,0,0" >
             <ComboBox x:Name="flowerbedBox" SelectionChanged="ComboBox_SelectionChanged" Margin="10,0" Width="152"/>
             <ComboBox x:Name="tubeBox" SelectionChanged="ComboBox_SelectionChanged" Margin="6,0" Width="153"/>
-            <ComboBox x:Name="nameFertilizerBox" SelectionChanged="ComboBox_SelectionChanged" Margin="10,0" Width="135"/>
             <CheckBox x:Name="CheckWater" Checked="CheckWater_Checked" VerticalAlignment="Center"
               Unchecked="CheckWater_Unchecked" Content="" Margin="10,0"/>
-            <Button Content="Добавить" Click="Button_Click_1" Margin="10,0" Width="97"/>
-            <Button Content="Обновить" Click="Button_Click" Margin="10,0" Width="94"/>
-        </StackPanel>
 
+        </StackPanel>
+        <Button Content="Добавить" Click="AddButton_Click" Height="28" HorizontalAlignment="Right" VerticalAlignment="Top" Width="97" Margin="0,110,10,0"/>
+        <Button Content="Обновить" Click="UpdateButton_Click" Height="28" HorizontalAlignment="Right" VerticalAlignment="Top" Width="97" Margin="0,110,120,0"/>
         <!-- Основной контейнер с ListView -->
         <Grid Margin="10,140,10,10">
             <ListView x:Name="WaterFlower2" MouseDoubleClick="WaterFlower2_MouseDoubleClick"
@@ -90,18 +89,8 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <!-- Удобрение -->
-                        <GridViewColumn Header="Удобрение" Width="150">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding nameFertilizer}" 
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"
-                                               Foreground="{StaticResource TextColor}"
-                                               FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+
+
 
                         <!-- Кнопка ColorBtn с цветом -->
                         <GridViewColumn Header="Статус" Width="50">

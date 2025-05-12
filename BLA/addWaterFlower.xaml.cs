@@ -24,13 +24,7 @@ namespace BLA
         public addWaterFlower()
         {
             InitializeComponent();
-            weekBox.Items.Add("Понедельник");
-            weekBox.Items.Add("Вторник");
-            weekBox.Items.Add("Среда");
-            weekBox.Items.Add("Четверг");
-            weekBox.Items.Add("Пятница");
-            weekBox.Items.Add("Суббота");
-            weekBox.Items.Add("Воскресенье");
+
 
             tubeIdComboBox.Items.Add("Труба 1");
             tubeIdComboBox.Items.Add("Труба 2");
@@ -38,20 +32,9 @@ namespace BLA
             tubeIdComboBox.Items.Add("Труба 4");
 
 
-            loadComboBox();
+    
         }
-        void loadComboBox()
-        {
-            DB db = new DB();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand(@"Select NameFertilizer From Fertilizer", db.GetConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            fertilizerBox.ItemsSource = table.DefaultView;
-            fertilizerBox.DisplayMemberPath = "NameFertilizer";
 
-        }
         int getIdFromComboBox(string comandName)
         {
             DB db = new DB();
@@ -65,14 +48,13 @@ namespace BLA
 
             return id;
         }
-        void addflowerBed(string flowerbed, int tubeid) 
+        void addflowerBed(string flowerbed) 
         {
             DB dB = new DB();
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand(@"Insert Into Flowerbed (Flowerbed, Tube_id) Values (@FbedName, @tubeId )", dB.GetConnection());
+            SqlCommand command = new SqlCommand(@"Insert Into Flowerbed (Flowerbed) Values (@FbedName)", dB.GetConnection());
             command.Parameters.Add("@FbedName", SqlDbType.VarChar).Value = flowerbed;
-            command.Parameters.Add("@tubeId", SqlDbType.Int).Value = tubeid;
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -112,49 +94,54 @@ namespace BLA
             {
                 return 4;
             }
+            
             return 5;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string flowerbed = flowerbedBox.Text;
-            string tube = tubeIdComboBox.SelectedItem.ToString();
+            string tube = tubeIdComboBox.SelectedItem?.ToString();
+
+            // Проверка на заполненность полей
+            if (string.IsNullOrEmpty(flowerbed) || string.IsNullOrEmpty(tube))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля!");
+                return;
+            }
+
             int tubeId = gettubeIdComboBoxValue(tube);
-            addflowerBed(flowerbed, tubeId);
-            int flowerbedID = findFlowerBedID(flowerbed);
-            string startTime = startBox.Text;
-            string endTime = endBox.Text;
-            string weekItem = weekBox.SelectedItem.ToString();
-            DataRowView selectedFertilizerBoxItem = (DataRowView)fertilizerBox.SelectedItem;
-            string fertilizerBoxItem = selectedFertilizerBoxItem["NameFertilizer"].ToString();
-            int fertilizerId = getIdFromComboBox(fertilizerBoxItem);
 
             try
             {
                 DB db = new DB();
+
+                // 1. Сначала добавляем клумбу (если её ещё нет)
+                addflowerBed(flowerbed);
+
+                // 2. Получаем ID клумбы
+                int flowerbedID = findFlowerBedID(flowerbed);
+
+                // 3. Добавляем запись в WaterFlowers (только Flowerbed_id и Tube_id)
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 DataTable table = new DataTable();
-                SqlCommand command = new SqlCommand(@"Insert Into WaterFlowers (Flowerbed_id, Tube_id, StartWater, EndWater, WaterDate, Fertilizer_id) Values (@Fid, @Tid, @StartT, @EndT, @Week, @FertId)" , db.GetConnection());
+                SqlCommand command = new SqlCommand(
+                    @"INSERT INTO WaterFlowers (Flowerbed_id, Tube_id) 
+              VALUES (@Fid, @Tid)",
+                    db.GetConnection());
+
                 command.Parameters.Add("@Fid", SqlDbType.Int).Value = flowerbedID;
                 command.Parameters.Add("@Tid", SqlDbType.Int).Value = tubeId;
-                command.Parameters.Add("@StartT", SqlDbType.VarChar).Value = startTime;
-                command.Parameters.Add("@EndT", SqlDbType.VarChar).Value = endTime;
-                command.Parameters.Add("@Week", SqlDbType.VarChar).Value = weekItem;
-                command.Parameters.Add("@FertId", SqlDbType.Int).Value = fertilizerId;
-                adapter.SelectCommand= command;
+
+                adapter.SelectCommand = command;
                 adapter.Fill(table);
+
+                MessageBox.Show("Данные успешно добавлены!");
                 this.Close();
-                    
-                
-             
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Произошла ошибка: {ex.Message}");
-            }
-            finally
-            {
-                this.Close();
             }
         }
     }

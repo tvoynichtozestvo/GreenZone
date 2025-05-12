@@ -17,6 +17,7 @@ namespace BLA
         public int flowerbedId { get; set; }
         public string flowerbed { get; set; }
         public int tubeId { get; set; }
+        public string tube { get; set; }
 
         
         public FlowerInfo(WaterFlower.WaterFlowers selectedFlower)
@@ -29,11 +30,10 @@ namespace BLA
 
             // Заполнение данных
             numFlowerbed.Content = selectedFlower.flowerbed;
-            int id  = Convert.ToInt32(selectedFlower.flowerbed.Split().Last());
-            int tubeId  = Convert.ToInt32(selectedFlower.tube.Split().Last());
-            this.flowerbedId = id;
-            this.tubeId = tubeId;
 
+            this.tube = selectedFlower.tube;
+            this.tubeId = getTubeId();
+            this.flowerbedId = getFlowerbedId();
             // Логика работы полива и проверка цвета
             TrueFalse.Content = selectedFlower.color == "#FF60EF60"
                 ? "Полив сейчас работает"
@@ -103,6 +103,18 @@ namespace BLA
             DataTable dataTable = new DataTable();
             SqlCommand sqlCommand = new SqlCommand("Select id From Flowerbed Where Flowerbed = @fname ", dB.GetConnection());
             sqlCommand.Parameters.Add("@fname", SqlDbType.VarChar).Value = this.flowerbed;
+            adapter.SelectCommand = sqlCommand;
+            adapter.Fill(dataTable);
+            int id = Convert.ToInt32(dataTable.Rows[0]["id"]);
+            return id;
+        }
+        int getTubeId()
+        {
+            DB dB = new DB();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable dataTable = new DataTable();
+            SqlCommand sqlCommand = new SqlCommand("Select id From Tube Where Tube = @fname ", dB.GetConnection());
+            sqlCommand.Parameters.Add("@fname", SqlDbType.VarChar).Value = this.tube;
             adapter.SelectCommand = sqlCommand;
             adapter.Fill(dataTable);
             int id = Convert.ToInt32(dataTable.Rows[0]["id"]);
