@@ -22,12 +22,14 @@ namespace BLA
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public string role {  get; set; }
+
+        public MainWindow(string role)
         {
             InitializeComponent();
-            LoginPage loginPage = new LoginPage();
-            MainFrame.Content = loginPage;
-
+            this.role = role;   
+            WaterFlower waterFlower = new WaterFlower();
+            MainFrame.Content = waterFlower;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -35,17 +37,7 @@ namespace BLA
             MainFrame.GoBack();
         }
 
-        private void MainFrame_ContentRendered(object sender, EventArgs e)
-        {
-            if (MainFrame.CanGoBack)
-            {
-                BackBtn.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                BackBtn.Visibility = Visibility.Hidden;
-            }
-        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             send send1 = new send();
@@ -78,5 +70,61 @@ namespace BLA
             this.Close();
         }
 
+        private void homePageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WaterFlower waterFlower = new WaterFlower();
+            MainFrame.Content = waterFlower;
+        }
+
+        private void BackBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered_1(object sender, EventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                BackBtn.Visibility = Visibility.Visible;
+                sideBarPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BackBtn.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void fertBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FertilizerPage fertilizerPage = new FertilizerPage();
+            MainFrame.Content = fertilizerPage;
+        }
+
+        private void employerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.role == "Администратор")
+            {
+                UsersPage usersPage = new UsersPage();
+                MainFrame.Content = usersPage;
+            }
+            else
+            {
+                MessageBox.Show("Эта функция доступна только Администратору");
+            }
+       
+        }
+
+        private void toSupportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            send send1 = new send();
+            send1.Show();
+        }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -8,13 +8,15 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        Title="Главное окно" Height="640" Width="900" Icon="assets/logo.ico">
+        Title="Главное окно" Height="750" Width="1400" Icon="assets/logo.ico" MinHeight="750" MinWidth="1000" WindowStartupLocation="CenterScreen">
+
     <Window.Resources>
         <SolidColorBrush x:Key="PrimaryColor">#FF4CAF50</SolidColorBrush>
         <SolidColorBrush x:Key="SecondaryColor">#E8F5E9</SolidColorBrush>
         <SolidColorBrush x:Key="ButtonHoverColor">#FF45A049</SolidColorBrush>
         <SolidColorBrush x:Key="TextColor">#333333</SolidColorBrush>
-        
+        <SolidColorBrush x:Key="MenuBackground">#B5DEB8</SolidColorBrush>
+
         <Style x:Key="WindowControlButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
             <Setter Property="Foreground" Value="White"/>
@@ -43,51 +45,70 @@
             </Style.Triggers>
         </Style>
 
-
-
-
-        <!-- Общий стиль для кнопок -->
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource PrimaryColor}" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderThickness" Value="0" />
+        <!-- Стиль для кнопок сайдбара -->
+        <Style x:Key="SidebarButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource ButtonHoverColor}" />
+                    <Setter Property="Background" Value="{StaticResource ButtonHoverColor}"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
 
+    <Grid Background="{StaticResource SecondaryColor}">
+        <!-- Верхняя панель с кнопками управления окном -->
+        <DockPanel VerticalAlignment="Top" Height="40" Background="{StaticResource PrimaryColor}">
+            <!-- Область перетаскивания окна -->
+            <Border Background="Transparent" DockPanel.Dock="Left" Width="1200" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid>
+                    <Label Content="Green Zone" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,0,0,0"/>
+                </Grid>
+            </Border>
 
-    <Grid Background="#E8F5E9">
-
-        <DockPanel VerticalAlignment="Top" Height="24" Background="{StaticResource PrimaryColor}" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <!-- Кнопки управления окном -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right">
-                <Button x:Name="MinimizeButton" Content="–" Width="40" Height="24" Style="{StaticResource WindowControlButton}" Click="MinimizeButton_Click"/>
-                <Button x:Name="MaximizeButton" Content="☐" Width="40" Height="24" Style="{StaticResource WindowControlButton}" Click="MaximizeButton_Click"/>
-                <Button x:Name="CloseButton" Content="✕" Width="40" Height="24" Style="{StaticResource WindowControlButton}" Click="CloseButton_Click"/>
+                <Button x:Name="MinimizeButton" Content="–" Width="40" Height="40" Style="{StaticResource WindowControlButton}" Click="MinimizeButton_Click"/>
+                <Button x:Name="MaximizeButton" Content="☐" Width="40" Height="40" Style="{StaticResource WindowControlButton}" Click="MaximizeButton_Click"/>
+                <Button x:Name="CloseButton" Content="✕" Width="40" Height="40" Style="{StaticResource WindowControlButton}" Click="CloseButton_Click"/>
             </StackPanel>
         </DockPanel>
-        
-        <!-- Верхнее меню -->
-        <Menu Background="#B5DEB8" Height="50" VerticalAlignment="Top" Margin="0 24 0 0">
-            <MenuItem IsEnabled="False">
-                <MenuItem.Header>
-                    <AccessText Text="🌱 Зелёная зона" Margin="0,8,0,0" FontSize="20" Foreground="Black" />
-                </MenuItem.Header>
-            </MenuItem>
-        </Menu>
-        <Button x:Name="BackBtn" Content="Назад" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 34 20 0" Click="BackBtn_Click"/>
+
+        <!-- Сайдбар -->
+        <DockPanel >
+            <StackPanel x:Name="sideBarPanel" Background="{StaticResource MenuBackground}" Width="200" VerticalAlignment="Stretch" HorizontalAlignment="Left" DockPanel.Dock="Left">
+                <Image Source="assets/logo.png" Height="100" Margin="0,10,0,20" HorizontalAlignment="Center" />
+                <Label Content="Green Zone" Foreground="{StaticResource TextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="0,-20,0,0" Cursor="Hand"/>
+                <Button x:Name="homePageBtn" Content="Главная" Style="{StaticResource SidebarButton}" FontSize="20" Cursor="Hand" Click="homePageBtn_Click"/>
+                <Button x:Name="fertBtn" Content="Удобрения" Style="{StaticResource SidebarButton}" FontSize="20" Cursor="Hand" Click="fertBtn_Click"/>
+                <Button x:Name="employerBtn" Content="Сотруднки" Style="{StaticResource SidebarButton}" FontSize="20" Cursor="Hand" Click="employerBtn_Click"/>
+                <Button x:Name="exitBtn" Content="Выйти" Style="{StaticResource SidebarButton}" FontSize="20" Cursor="Hand" Click="exitBtn_Click"/>
+            </StackPanel>
+
+            <!-- Основной контент -->
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0 0 0 0" Background="{StaticResource SecondaryColor}"  Height="659" ContentRendered="MainFrame_ContentRendered_1"/>
+        </DockPanel>
 
         <!-- Нижнее меню -->
-        <Menu Background="#B5DEB8" Height="50" VerticalAlignment="Bottom">
+        <Menu Background="{StaticResource MenuBackground}" Height="50" VerticalAlignment="Bottom">
         </Menu>
-        <Button Content="Написать в поддержку" Margin="10,0,0,10"  Height="28" Width="138" Background="Transparent" Foreground="Black" Click="Button_Click_1" FontSize="13" VerticalAlignment="Bottom" HorizontalAlignment="Left" BorderThickness="0"/>
-
-        <!-- Основной фрейм -->
-        <Frame Name="MainFrame" Margin="15,95,15,60" Background="#E8F5E9" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" />
+        <Button x:Name="BackBtn" Content="Назад" Style="{StaticResource SidebarButton}" FontSize="20"  Cursor="Hand" Margin="1245,45,10,655" Click="BackBtn_Click_1"/>
+        <Button x:Name="toSupportBtn" Content="Написать в поддержку" Margin="32,0,0,10" Height="28" Width="138" Background="Transparent" Foreground="{StaticResource TextColor}" FontSize="13" VerticalAlignment="Bottom" HorizontalAlignment="Left" BorderThickness="0" Click="toSupportBtn_Click"/>
     </Grid>
 </Window>

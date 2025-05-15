@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,20 +14,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static BLA.WaterFlower;
 
 namespace BLA
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для LoginWindow.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class LoginWindow : Window
     {
-        public LoginPage()
+        public LoginWindow()
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -47,14 +45,15 @@ namespace BLA
                 string group = table.Rows[0]["role"].ToString();
                 if (group == "Администратор")
                 {
-                    UsersPage mainWindowAdmin = new UsersPage();
-                    NavigationService?.Navigate(mainWindowAdmin);
+                    MainWindow mainWindow = new MainWindow("Администратор");
+                    mainWindow.Show();
+                    this.Close();
                 }
                 else if (group == "Работник")
                 {
-                    WaterFlower mainWindowAdmin = new WaterFlower();
-                    NavigationService?.Navigate(mainWindowAdmin);
-
+                    MainWindow mainWindow = new MainWindow("Работник");
+                    mainWindow.Show();
+                    this.Close();
                 }
                 else
                 {

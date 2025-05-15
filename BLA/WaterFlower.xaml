@@ -122,6 +122,5 @@
                 </ListView.View>
             </ListView>
         </Grid>
-        <Button Content="Удобрения" HorizontalAlignment="Right" Margin="0,14,10,0" VerticalAlignment="Top" Width="127" Height="26" Click="Button_Click_2"/>
     </Grid>
 </Page>
